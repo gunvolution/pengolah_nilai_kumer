@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengolah Nilai Kurikulum Merdeka</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Memuat Supabase SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body class="bg-gray-100 p-8 font-sans">
+    <div class="max-w-5xl mx-auto">
+        <header class="bg-white p-6 rounded-lg shadow-md mb-6 flex justify-between items-center">
+            <div>
+                <h1 class="text-2xl font-bold text-gray-800">Aplikasi Pengolah Nilai</h1>
+                <p class="text-gray-600" id="school-info">Memuat data sekolah...</p>
+            </div>
+        </header>
+
+        <main class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-xl font-semibold mb-4">Input Nilai Siswa</h2>
+            
+            <form id="score-form" class="grid grid-cols-1 md:grid-cols-5 gap-4 mb-6 bg-gray-50 p-4 rounded border">
+                <input type="text" id="nisn" placeholder="NISN" class="p-2 border rounded" required>
+                <input type="text" id="name" placeholder="Nama Siswa" class="p-2 border rounded" required>
+                <input type="number" id="tp1" placeholder="Nilai TP 1" class="p-2 border rounded" min="0" max="100" required>
+                <input type="number" id="tp2" placeholder="Nilai TP 2" class="p-2 border rounded" min="0" max="100" required>
+                <input type="number" id="sas" placeholder="Nilai SAS" class="p-2 border rounded" min="0" max="100" required>
+                <button type="submit" class="md:col-span-5 bg-blue-600 text-white p-2 rounded hover:bg-blue-700 transition">Simpan Data</button>
+            </form>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-gray-200">
+                            <th class="p-3 border-b">NISN</th>
+                            <th class="p-3 border-b">Nama</th>
+                            <th class="p-3 border-b">TP 1</th>
+                            <th class="p-3 border-b">TP 2</th>
+                            <th class="p-3 border-b">SAS</th>
+                            <th class="p-3 border-b">Nilai Akhir (Rerata)</th>
+                            <th class="p-3 border-b">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="student-list">
+                        <!-- Data siswa akan dimuat di sini -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

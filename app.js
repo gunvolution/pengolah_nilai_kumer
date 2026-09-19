@@ -1,6 +1,6 @@
 // Konfigurasi Supabase
-const SUPABASE_URL = 'URL_SUPABASE_ANDA';
-const SUPABASE_ANON_KEY = 'ANON_KEY_ANDA';
+const SUPABASE_URL = 'cqcafgzdqktlfqbjmerd';
+const SUPABASE_ANON_KEY = 'sb_publishable_DXGCdxbIicrvs6PI4qPDBg_ktpTTsCI';
 
 const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
